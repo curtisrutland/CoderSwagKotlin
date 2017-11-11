@@ -14,12 +14,12 @@ import kotlinx.android.synthetic.main.category_list_item.view.*
 class CategoryRecycleAdapter(private val context: Context, private val categories: List<Category>, private val itemClick: (Category) -> Unit)
     : RecyclerView.Adapter<CategoryRecycleAdapter.Holder>() {
 
-    override fun onBindViewHolder(holder: Holder?, position: Int) {
-        holder?.bindCategory(categories[position], context)
-    }
-
     override fun getItemCount(): Int {
         return categories.count()
+    }
+
+    override fun onBindViewHolder(holder: Holder?, position: Int) {
+        holder?.bindCategory(categories[position], context)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): Holder {

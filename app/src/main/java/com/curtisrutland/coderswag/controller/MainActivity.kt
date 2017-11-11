@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         adapter = CategoryRecycleAdapter(this, DataService.categories) { category ->
-            //Toast.makeText(this, category.title, Toast.LENGTH_SHORT).show()
             val productIntent = Intent(this, ProductsActivity::class.java)
             productIntent.putExtra(EXTRA_CATEGORY, category.title)
             startActivity(productIntent)
