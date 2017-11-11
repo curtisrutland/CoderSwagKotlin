@@ -14,6 +14,7 @@ class CategoryAdapter(private val context: Context, private val categories: List
 
     /**
      * Remember this ViewHolder pattern for later!!!
+     * but also remember the recycler view in the other adapter is even better!
      */
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val categoryView: View
@@ -26,7 +27,7 @@ class CategoryAdapter(private val context: Context, private val categories: List
             holder.categoryName = categoryView.findViewById(R.id.categoryName)
             categoryView.tag = holder //tag is a lot like it was in winforms; cache this in the view itself
         } else { //we've already loaded this particular view
-            holder = convertView.tag as ViewHolder //so we just un-cache the view-holder
+            holder = convertView.tag as ViewHolder //so we just un-cache the view-Holder
             categoryView = convertView
         }
 
